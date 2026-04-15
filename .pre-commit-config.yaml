@@ -1,0 +1,47 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: check-yaml
+      - id: sort-simple-yaml
+      - id: check-added-large-files
+
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v4.2.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
+        args: []
+
+  # - repo: local
+  #   hooks:
+  #     - id: prettier-project
+  #       name: prettier-project
+  #       language: system
+  #       types_or: [ts, html, scss]
+  #       entry: npx prettier
+  #       args: ["--write"]
+
+  #     - id: eslint
+  #       name: eslint
+  #       language: system
+  #       types_or: [ts]
+  #       entry: ./services/app-front-platform/node_modules/.bin/eslint
+  #       args: ["--fix", "-c", "services/app-front-platform/.eslintrc.js", "--max-warnings=0"]
+
+  #     - id: php-cs-fixer
+  #       name: php-cs-fixer
+  #       language: system
+  #       types_or: [php]
+  #       args: [ "fix", "--allow-risky=yes", "--config=phpcsfixer.php", "--no-interaction"]
+  #       entry: ./services/app-back-platform/vendor/bin/php-cs-fixer
+
+  #     - id: psalm
+  #       name: psalm
+  #       language: system
+  #       types_or: [php]
+  #       args: [ "-c", "services/app-back-platform/psalm.xml.dist"]
+  #       entry: ./services/app-back-platform/vendor/bin/psalm
