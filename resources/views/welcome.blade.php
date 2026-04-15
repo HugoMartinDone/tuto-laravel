@@ -1,13 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-
-<body>
+<x-layout title="Home">
     <h1>Hello world!</h1>
-
-    <a href="/about">About us</a>
-</body>
-</html>
+</x-layout>
