@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\IdeaRequest;
 use App\Models\Idea;
 use Illuminate\Http\Request;
 
@@ -13,18 +14,18 @@ class IdeaController extends Controller
             ->when(request('state'), function($query, $state){
                 $query->where('state', $state);
             })->get();
-        
+
         return view('ideas.index', [
             'ideas' => $ideas
         ]);
     }
-    
+
     public function create()
     {
         return view('ideas.create');
     }
 
-    public function store(Request $request)
+    public function store(IdeaRequest $request)
     {
         Idea::create([
             'description' => request('description'),
@@ -47,7 +48,7 @@ class IdeaController extends Controller
         ]);
     }
 
-    public function update(Request $request, Idea $idea)
+    public function update(IdeaRequest $request, Idea $idea)
     {
         $idea->update([
             'description' => request('description')
