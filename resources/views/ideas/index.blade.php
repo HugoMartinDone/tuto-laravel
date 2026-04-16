@@ -3,13 +3,13 @@
   @if ($ideas->count())
     <div class="mt-6">
       <h2 class="font-bold">Your ideas</h2>
-      <ul>
+      <div class="mt-6 grid grid-cols-2 gap-x-6 gap-y-6">
 	@foreach ($ideas as $idea)
-	  <a href="/ideas/{{ $idea->id }}">
-	    <li class="text-sm">{{ $idea->description }}</li>
-	  </a>
+	  <x-card  :idea="$idea" href="/ideas/{{ $idea->id }}">
+	    {{ $idea->description }}
+	  </x-card>
 	@endforeach
-      </ul>
+      </div>
     </div>
   @else
     <p>No ideas yet. <a class="underline" href="/ideas/create">Create a new one</a></p>
