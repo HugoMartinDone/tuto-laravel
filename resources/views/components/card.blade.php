@@ -6,4 +6,4 @@
   <div class="card-body">
     <h2 class="card-title">{{ $slot }}</h2>
     </div>
-</div>
+</a>
