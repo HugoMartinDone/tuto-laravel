@@ -25,7 +25,7 @@ class IdeaController extends Controller
 
     public function store(IdeaRequest $request)
     {
-        Gate::authorize('view', $idea);
+        Gate::authorize('create', Idea::class);
         Auth::user()->ideas()->create([
             'description' => request('description'),
             'state' => 'pending',
