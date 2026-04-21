@@ -31,3 +31,8 @@ Route::middleware('guest')->group(function() {
     Route::post('/login', [SessionsController::class, 'store']);
     Route::delete('/logout', [SessionsController::class, 'destroy']);
 });
+
+
+Route::get('/admin', function () {
+    return 'Very secret secret';
+})->can('admin');
