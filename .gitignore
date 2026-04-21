@@ -55,3 +55,6 @@ Homestead.json
 .env.production
 .phpactor.json
 auth.json
+
+// Playwright screenshots
+tests/Browser/Screenshots

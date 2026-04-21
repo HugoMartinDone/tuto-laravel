@@ -19,7 +19,7 @@
       <input type="password" name="password" class="input" placeholder="Password" required/>
       <x-forms.error field='password'/>
 
-      <button class="btn btn-neutral mt-4">Register</button>
+      <button class="btn btn-neutral mt-4" data-test="register-button">Register</button>
     </fieldset>
 
   </form>

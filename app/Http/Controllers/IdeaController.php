@@ -28,8 +28,7 @@ class IdeaController extends Controller
     {
         Gate::authorize('create', Idea::class);
         $idea = Auth::user()->ideas()->create([
-            'description' => request('description'),
-            'state' => 'pending',
+            'description' => request('description')
         ]);
 
         Auth::user()
